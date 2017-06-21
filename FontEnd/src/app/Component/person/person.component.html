@@ -1,0 +1,50 @@
+<!--component html goes here -->
+<div class="container">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th><th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let person of persons">
+    <td>{{ person.id }}</td>
+    <td>{{ person.firstName }}</td>
+    <td>{{ person.lastName }}</td>
+    <td>
+        <button title="Edit" class="btn btn-primary" (click)="editUser(person.id)">Edit</button>
+        <button title="Delete" class="btn btn-danger" (click)="deleteUser(person.id)">Delete</button>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<modal #personmodal>
+    <form novalidate (ngSubmit)="onSubmit(userFrm)" [formGroup]="userFrm">
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">{{modalTitle}}</h4>
+        </modal-header>
+        <modal-body>
+
+            <div class="form-group">
+                <div>
+                    <span>User name*</span>
+                    <input type="text" class="form-control" placeholder="Name" formControlName="firstName">
+                </div>
+                <div>
+                    <span>Mobile</span>
+                    <input type="text" class="form-control" placeholder="mobile" formControlName="lastName">
+                </div>
+            </div>
+        </modal-body>
+        <modal-footer>
+            <div>
+                <a class="btn btn-default" (click)="modal.dismiss()">Cancel</a>
+                <button type="submit" [disabled]="userFrm.invalid" class="btn btn-primary">{{modalBtnTitle}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>
