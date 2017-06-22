@@ -8,9 +8,9 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 class Person {
-  id: number;
-  firstName: string;
-  lastName: string;
+    id: number;
+    firstName: string;
+    lastName: string;
 }
 @Component({
     moduleId: module.id,
@@ -29,39 +29,56 @@ export class PersonComponent implements OnInit {
     dbops: DBOperation;
     modalTitle: string;
     modalBtnTitle: string;
-  // We use this trigger because fetching the list of persons can be quite long,
-  // thus we ensure the data is fetched before rendering
-  dtTrigger: Subject<Person> = new Subject();
+    // We use this trigger because fetching the list of persons can be quite long,
+    // thus we ensure the data is fetched before rendering
+    dtTrigger: Subject<Person> = new Subject();
 
-  constructor(private http: Http, private fb: FormBuilder) { }
+    constructor(private http: Http, private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-      console.log('begin');
-      this.userFrm = this.fb.group({
+    ngOnInit(): void {
+        console.log('begin');
+        this.userFrm = this.fb.group({
             id: [],
             firstName: [''],
             lastName: ['']
         });
         console.log('step 1');
         this.dtOptions = {
-        pagingType: 'full_numbers'
-    };
-    console.log('step 2');
+            pagingType: 'full_numbers'
+            //     ,
+            //           columns: [{
+            //     title: 'ID',
+            //     data: 'id'
+            //   }, {
+            //     title: 'First name',
+            //     data: 'firstName'
+            //   }, {
+            //     title: 'Last name',
+            //     data: 'lastName'
+            //   },
+            //   {
+            //       title: '',
+            //       data: function(data){
+            //         return '<a>'
+            //       }
+            //   }]
+        };
+        console.log('step 2');
         this.http.get('../../../assets/data/person.json')
-        .map(this.extractData)
-        .subscribe(data => {
-            this.persons = data;
-            this.indLoading = false;
-            // Calling the DT trigger to manually render the table
-            this.dtTrigger.next();
-        });
+            .map(this.extractData)
+            .subscribe(data => {
+                this.persons = data;
+                this.indLoading = false;
+                // Calling the DT trigger to manually render the table
+                this.dtTrigger.next();
+            });
         console.log('end init');
-  }
+    }
 
-  private extractData(res: Response) {
-    const body = res.json();
-    return body.data || {};
-  }
+    private extractData(res: Response) {
+        const body = res.json();
+        return body.data || {};
+    }
 
     editUser(id: number) {
         console.log(id);
