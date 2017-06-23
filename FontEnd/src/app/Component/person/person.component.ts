@@ -40,13 +40,14 @@ export class PersonComponent implements OnInit {
         this.userFrm = this.fb.group({
             id: [],
             firstName: [''],
-            lastName: ['']
+            lastName: [''],
+            eMail: []
         });
         console.log('step 1');
         this.dtOptions = {
             pagingType: 'full_numbers'
             //     ,
-            //           columns: [{
+            // columns: [{
             //     title: 'ID',
             //     data: 'id'
             //   }, {
@@ -57,9 +58,10 @@ export class PersonComponent implements OnInit {
             //     data: 'lastName'
             //   },
             //   {
-            //       title: '',
+            //       title: 'Action',
             //       data: function(data){
-            //         return '<a>'
+            //         return '<button title="Edit" class="btn btn-primary" onClick="editUser(person.id)">Edit</button>' +
+            //         '<button title="Delete" class="btn btn-danger" (click)="deleteUser(person.id)">Delete</button>'
             //       }
             //   }]
         };

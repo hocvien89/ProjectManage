@@ -3,22 +3,32 @@
     {
       "id": 860,
       "firstName": "Superman",
-      "lastName": "Yoda"
+      "lastName": "Yoda",
+      "eMail": "123@gmail.com"
     },
     {
       "id": 870,
       "firstName": "Foo",
-      "lastName": "Whateveryournameis"
+      "lastName": "Whateveryournameis",
+      "eMail": "123@gmail.com"
     },
     {
       "id": 590,
       "firstName": "Toto",
-      "lastName": "Titi"
+      "lastName": "Titi",
+      "eMail": "123@gmail.com"
     },
     {
       "id": 591,
       "firstName": "Toto",
-      "lastName": "Titi"
+      "lastName": "Titi",
+      "eMail": "123@gmail.com"
+    },
+    {
+      "id": 591,
+      "firstName": "Toto",
+      "lastName": "Titi",
+      "eMail": "123@gmail.com"
     }
   ]
 }
