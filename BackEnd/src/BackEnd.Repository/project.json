@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "BackEnd.Entities": "1.0.0-*",
+    "BackEnd.Repository.Interfaces": "1.0.0-*",
+    "Dapper": "1.50.2",
+    "NETStandard.Library": "2.0.0-preview1-25301-01",
+    "System.Configuration.ConfigurationManager": "4.4.0-preview1-25305-02",
+    "System.Data.SqlClient": "4.3.1",
+    "System.Runtime": "4.3.0"
+  },
+
+  "frameworks": {
+    "netstandard2.0": {
+      "imports": "dnxcore50"
+    }
+  }
+}
