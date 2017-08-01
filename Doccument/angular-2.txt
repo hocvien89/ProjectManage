@@ -1,0 +1,4 @@
+--- INSTALL IN VSC
+- install angular-cli: npm install -g @angular/cli
+- run app: npm start
+- disable warning: ng set --global warnings.versionMismatch=false

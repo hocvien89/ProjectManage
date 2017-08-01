@@ -44,27 +44,27 @@ export class PersonComponent implements OnInit {
             eMail: []
         });
         console.log('step 1');
-        this.dtOptions = {
-            pagingType: 'full_numbers'
-            //     ,
-            // columns: [{
-            //     title: 'ID',
-            //     data: 'id'
-            //   }, {
-            //     title: 'First name',
-            //     data: 'firstName'
-            //   }, {
-            //     title: 'Last name',
-            //     data: 'lastName'
-            //   },
-            //   {
-            //       title: 'Action',
-            //       data: function(data){
-            //         return '<button title="Edit" class="btn btn-primary" onClick="editUser(person.id)">Edit</button>' +
-            //         '<button title="Delete" class="btn btn-danger" (click)="deleteUser(person.id)">Delete</button>'
-            //       }
-            //   }]
-        };
+        // this.dtOptions = {
+        //     pagingType: 'full_numbers'
+        //         ,
+        //     columns: [{
+        //         title: 'ID',
+        //         data: 'id'
+        //       }, {
+        //         title: 'First name',
+        //         data: 'firstName'
+        //       }, {
+        //         title: 'Last name',
+        //         data: 'lastName'
+        //       },
+        //       {
+        //           title: 'Action',
+        //           data: function(data){
+        //              return '<button title="Edit" class="btn btn-primary" onClick="editUser(person.id)">Edit</button>' +
+        //              '<button title="Delete" class="btn btn-danger" (click)="deleteUser(person.id)">Delete</button>'
+        //            }
+        //        }]
+        // };
         console.log('step 2');
         this.http.get('../../../assets/data/person.json')
             .map(this.extractData)
